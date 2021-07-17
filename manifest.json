@@ -1,6 +1,6 @@
 {
     "name":"Mac's Roblox Utils",
-    "version": "0.0.0.1",
+    "version": "0.0.0.2",
     "manifest_version": 3,
     "description": "A collection of neat stuff to enchance your Roblox website experience.",
     "author": "MacAndSwiss",
@@ -18,7 +18,7 @@
         "default_popup": "Main.html"
     },
     "background": {
-        "service_worker": "backgroundtest.js"
+        "service_worker": "background.js"
     },
     "host_permissions":["https://*.roblox.com/"],
     "permissions":["storage", "webNavigation", "tabs"]
