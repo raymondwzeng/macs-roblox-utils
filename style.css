@@ -1,0 +1,97 @@
+body {
+    width: 160px;
+    height: 200px;
+    margin: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.header {
+    text-align: center;
+    font-size: large;
+    display: flex;
+    font-weight: bolder;
+}
+
+.header:before {
+    content: "";
+    background-image: url('icon48.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    bottom: 0px;
+    left: 35.3%;
+    width: 50px;
+    height: 50px;
+    opacity: 0.2;
+}
+
+.footnote {
+    position: absolute;
+    text-align: center;
+    bottom:0;
+}
+
+.container {
+    text-align: center;
+}
+.label {
+    display: inline;
+    vertical-align: sub;
+}
+
+.toggle-btn {
+    align-self: center;
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    vertical-align: text-top;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: lightgray;
+    transition: 0.5s;
+    border: 3px solid rgb(155, 155, 155);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-btn input {display: none;}
+
+.slider:before
+{
+    position: absolute;
+    cursor: pointer;
+    left: 4px;
+    bottom: 3px;
+    content: "";
+    transition: 0.5s;
+}
+
+input:checked + .slider {
+    background-color: lightgray;
+}
+
+input:checked + .slider:before {
+    transform: translateX(23px);
+    background: rgb(18, 201, 18);
+}
+
+.slider.round {
+    border-radius: 35px;
+}
+
+.slider.round:before
+{
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: lightslategray;
+}
