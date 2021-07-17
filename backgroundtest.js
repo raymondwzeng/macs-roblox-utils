@@ -18,12 +18,13 @@ chrome.storage.sync.onChanged.addListener((changed) =>
     }
 })
 
-
 function handlePluginSafetyCheck(details) {
     const url = `https://api.roblox.com/marketplace/productinfo?assetId=${details.url.match(regURL)[0]}`
         fetch(url)
             .then(response => response.json())
             .then(data => {
+                console.log("Verbose output data: ");
+                console.log(data);
                 if(data["AssetTypeId"] !== 38) return;
                 chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
                     if(tabs.length === 0) {
@@ -65,10 +66,6 @@ function handlePluginSafetyCheck(details) {
                             });
                         });
                     }
-                    chrome.tabs.sendMessage(tabs[0].id, {
-                        message: "PluginInfo",
-                        payload: payloadData
-                    });
                 });
             });
     
